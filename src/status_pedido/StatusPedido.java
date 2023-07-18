@@ -1,9 +1,9 @@
 package status_pedido;
 
-public enum Status {
+public enum StatusPedido {
 
 	pagamento_pendente,
-	em_processamento,
+	processando,
 	enviado,
 	entregue;
 }
