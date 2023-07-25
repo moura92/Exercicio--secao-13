@@ -2,23 +2,23 @@ package entidades;
 
 public class Produto {
 
-	private String nomeproduto;
+	private String produto;
 	private Double preço;
 	
 	public Produto() {
 	}
 
-	public Produto(String nomeproduto, Double preço) {
-		this.nomeproduto = nomeproduto;
+	public Produto(String produto, Double preço) {
+		this.produto = produto;
 		this.preço = preço;
 	}
 
-	public String getNomeproduto() {
-		return nomeproduto;
+	public String getproduto() {
+		return produto;
 	}
 
-	public void setNomeproduto(String nomeproduto) {
-		this.nomeproduto = nomeproduto;
+	public void setproduto(String nomeproduto) {
+		this.produto = nomeproduto;
 	}
 
 	public Double getPreço() {

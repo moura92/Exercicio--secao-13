@@ -1,6 +1,8 @@
 package entidades;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import status_pedido.StatusPedido;
 
@@ -9,16 +11,23 @@ public class Ordem {
 	private Date momento;
 	private StatusPedido status;
 	
-	OrdemItem ordemitens = new OrdemItem();
+	private Cliente cliente;
+	private List<OrdemItem> ordemitem = new ArrayList<>();
+
+	
 	
 	public Ordem() {
 	}
+	
 
-	public Ordem(Date momento, StatusPedido status) {
+	public Ordem(Date momento, StatusPedido status, Cliente cliente) {
 		this.momento = momento;
 		this.status = status;
+		this.cliente = cliente;
 	}
-
+	
+	
+	
 	public Date getMomento() {
 		return momento;
 	}
@@ -34,19 +43,34 @@ public class Ordem {
 	public void setStatus(StatusPedido status) {
 		this.status = status;
 	}
-	
-	
-	public void adicionaritem (OrdemItem quantidade) {
-		quantidade.getQuantidade();
+
+	public Cliente getCliente() {
+		return cliente;
+	}
+
+	public void setCliente(Cliente cliente) {
+		this.cliente = cliente;
+	}
+
+	public List<OrdemItem> getOrdemItem() {
+		return ordemitem;
+	}
+
+	public void additem(OrdemItem OrdemItem) {
+		ordemitem.add(OrdemItem);
+	}
+
+	public void removeritem(OrdemItem OrdemItem) {
+		ordemitem.remove(OrdemItem);
 	}
 	
-	public void removeritem (Ordem quantidade) {
-		quantidade.removeritem(quantidade);
-	}
+	public double total(Double subtotal) {
+		double soma = 0;
+		for (OrdemItem c : ordemitem) {
+			soma += c.subtotal();
+		}
+		return soma;
+	}	
 	
-	public Double totalordem () {
-		
-		return ordemitens;
-	}
 	
 }
