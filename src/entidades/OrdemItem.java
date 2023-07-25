@@ -10,8 +10,8 @@ public class OrdemItem {
 	public OrdemItem() {		
 	}
 
-	public OrdemItem(Integer quantidade, Double preço, Produto produtos) {
-		this.produto = produtos;
+	public OrdemItem(Integer quantidade, Double preço, Produto produto) {
+		this.produto = produto;
 		this.quantidade = quantidade;
 		this.preço = preço;
 	}
@@ -39,8 +39,8 @@ public class OrdemItem {
 		return produto;
 	}
 
-	public void setProduto(Produto produtos) {
-		this.produto = produtos;
+	public void setProduto(Produto produto) {
+		this.produto = produto;
 	}
 
 	public Double subtotal() {
@@ -49,9 +49,10 @@ public class OrdemItem {
 
 	@Override
 	public String toString() {
-		return "produto: " + produto
-				+ " Quantidade: " + quantidade
-				+ " SubTotal: " + preço;
+		return produto.getproduto()
+				+  ", " + String.format("%.2f" , preço)
+				+ ", Quantidade: " + quantidade
+				+ ", Subtotal: " + String.format("%.2f" , subtotal());
 	}
 	
 	

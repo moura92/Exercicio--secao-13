@@ -70,10 +70,10 @@ public class Programa {
 		System.out.println("Ordens dos Itens:");
 		
 		for(OrdemItem emp : ordem.getOrdemItem()) {
-			System.out.println("Teste: " + emp);
+			System.out.println(emp);
 		}
 						
-		System.out.println("Valor Total: R$ " + ordem.total(null));
+		System.out.printf("Valor Total: R$ %.2f", ordem.total(null));
 		
 		
 		

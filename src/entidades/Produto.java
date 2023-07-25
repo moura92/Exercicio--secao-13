@@ -17,8 +17,8 @@ public class Produto {
 		return produto;
 	}
 
-	public void setproduto(String nomeproduto) {
-		this.produto = nomeproduto;
+	public void setproduto(String produto) {
+		this.produto = produto;
 	}
 
 	public Double getPreço() {
