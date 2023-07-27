@@ -14,9 +14,6 @@ import entidades.OrdemItem;
 import entidades.Produto;
 import status_pedido.StatusPedido;
 
-
-
-
 public class Programa {
 
 	public static void main(String[] args) throws ParseException {
@@ -46,22 +43,19 @@ public class Programa {
 		for(int i = 1; i <= n; i++) {
 				System.out.println("insira os dados do " + i + "º item:");
 				System.out.print("Nome do Produto: ");
-				String produtos = sc.next();
+				String produto = sc.next();
 				System.out.print("Preço do Produto: ");
 				Double preço = sc.nextDouble();
 				System.out.print("Quantidade: ");
 				Integer quantidade = sc.nextInt();
 				
-				OrdemItem ordemitem = new OrdemItem(quantidade, preço, new Produto(produtos,preço));
+				Produto p = new Produto(produto, preço);
+				OrdemItem ordemitem = new OrdemItem(quantidade, preço, p);
 				ordem.additem(ordemitem);
 				
 		}
-		
-		
-	
-		
+			
 	    System.out.println("-----------------------------------------------");
-
 	
 	    System.out.println("Resumo do Pedido:");
 	    System.out.println("Momento do pedido: " + momento.format(sdf));

@@ -67,7 +67,7 @@ public class Ordem {
 	public double total(Double subtotal) {
 		double soma = 0;
 		for (OrdemItem c : ordemitem) {
-			soma += c.subtotal();
+			soma += c.subTotal();
 		}
 		return soma;
 	}	

@@ -43,16 +43,16 @@ public class OrdemItem {
 		this.produto = produto;
 	}
 
-	public Double subtotal() {
+	public Double subTotal() {
 		return quantidade * preço;
 	}
 
 	@Override
 	public String toString() {
 		return produto.getproduto()
-				+  ", " + String.format("%.2f" , preço)
+				+  ", R$ " + String.format("%.2f" , preço)
 				+ ", Quantidade: " + quantidade
-				+ ", Subtotal: " + String.format("%.2f" , subtotal());
+				+ ", Subtotal: R$ " + String.format("%.2f" , subTotal());
 	}
 	
 	
